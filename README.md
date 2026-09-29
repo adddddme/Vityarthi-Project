@@ -46,18 +46,23 @@ Clone the Repository:
 Open your terminal or command prompt and run:
 
 Bash
-git clone 
+
+git clone https://github.com/adddddme/Vityarthi-Project/tree/main/Project
+
 Navigate to the Directory:
 
 Bash
+
 cd game.black_jack
+
 Run the Game:
+
 Execute the main Python script to launch the command-line interface:
 
 Bash
+
 python main.py
-Instructions for Testing
-To verify the system functions correctly, perform the following integration tests during runtime:
+
 
 # Instructions for Testing
 To verify the system functions correctly, perform the following integration tests during runtime:
