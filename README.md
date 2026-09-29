@@ -1,4 +1,10 @@
 # Vityarthi-Project
+
+Name: Shorya Khare
+
+Registration Number: 26BAI10804
+
+
 # Project Title: Python Blackjack Simulator
 #Overview of the Project
 This project is a command-line Blackjack game built natively in Python. It is designed to simulate the classic casino card game where a player competes against an automated dealer to build a hand as close to 21 as possible without busting. The project demonstrates core computer science and Object-Oriented Programming (OOP) concepts, separating responsibilities into multiple distinct modules (such as cards, decks, players, and game logic) to ensure a clean, maintainable, and scalable architecture.
