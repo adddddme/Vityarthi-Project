@@ -1,76 +1,73 @@
 # Vityarthi-Project
-
 Name: Shorya Khare
-
 Registration Number: 26BAI10804
 
+# Python Blackjack Simulator
 
-# Project Title: Python Blackjack Simulator
-#Overview of the Project
-This project is a command-line Blackjack game built natively in Python. It is designed to simulate the classic casino card game where a player competes against an automated dealer to build a hand as close to 21 as possible without busting. The project demonstrates core computer science and Object-Oriented Programming (OOP) concepts, separating responsibilities into multiple distinct modules (such as cards, decks, players, and game logic) to ensure a clean, maintainable, and scalable architecture.
+# Overview of the Project
+Hey! This is a command-line Blackjack game I built entirely in Python. I made this project to simulate the classic casino game where you play against an automated computer dealer, trying to get as close to 21 as possible without busting.
 
-#Features
-Modular Architecture: Codebase divided into specific modules (cards.py, deck.py, player.py, dealer.py, game.py) for clean separation of concerns.
+I built this for my Python Essentials course. Instead of just writing one massive script that's impossible to read, I focused heavily on Object-Oriented Programming (OOP). I split the game logic up into separate files for the cards, the deck, the player, and the main game loop. This makes the code way easier to read, scale, and fix if something breaks.
 
-Dynamic Deck Management: Programmatic generation of a standard 52-card deck with automated shuffling and drawing mechanics.
+# Features
+Multiple Files: The code is split into specific modules (cards.py, deck.py, player.py, dealer.py, and game.py) so every part of the game has its own job.
 
-Advanced Score Calculation: Real-time evaluation of card values, including dynamic handling of Aces (automatically converting values from 11 to 1 to prevent a player from busting).
+Real Deck Logic: The program actually builds a 52-card deck, shuffles it using the random module, and handles the drawing mechanics.
 
-Automated Dealer AI: A computer-controlled dealer that strictly follows standard casino rules (drawing until a score of 17 is reached).
+Smart Aces: Hand values update in real time. If you draw an Ace and your score gets too high, the game automatically drops the Ace's value from 11 down to 1 so you don't bust.
 
-Persistent User Economy: A virtual bank system that tracks player balances across multiple sessions using JSON file storage.
+Dealer AI: The computer plays against you using actual casino rules. It's programmed to keep hitting until its score hits at least 17.
 
-Robust Error Handling: Continuous input validation to prevent the application from crashing due to unexpected user inputs (e.g., typing letters instead of bet amounts).
+Bank System: I added a virtual wallet that saves your balance to a local JSON file. You can close the game, come back later, and your money will still be there.
+
+Doesn't Crash Easily: I added a bunch of input validation. If you accidentally type a letter instead of a number for your bet, the game catches the error and asks again instead of just crashing the terminal.
 
 # Technologies/Tools Used
 Programming Language: Python 3.10+
 
-Standard Libraries:
+Standard Libraries: I only used built-in Python tools so you don't have to install anything extra.
 
-random (for deck shuffling)
+random (for shuffling)
 
-json (for reading and writing persistent wallet data)
+json (for saving wallet data)
 
-time (for pacing terminal outputs)
+time (to add small delays so the terminal text doesn't instantly flood the screen)
 
-os (for directory and file path management)
+os (for file paths)
 
-logging (for tracking game events and errors)
+logging (to track errors and game history in the background)
 
 Version Control: Git and GitHub
 
 # Steps to Install & Run the Project
-Prerequisites: Ensure Python 3.10 or newer is installed on your system. No external libraries or pip installations are required.
 
-Clone the Repository:
-Open your terminal or command prompt and run:
+First, just make sure you have Python 3.10 or newer installed on your computer. You don't need to run any pip installs.
+
+Clone the repository by opening your terminal and running:
+
+Bash
+git clone https://github.com/adddddme/Vityarthi-Project.git
+
+Navigate into the specific project folder:
 
 Bash
 
-git clone https://github.com/adddddme/Vityarthi-Project/tree/main/Project
+cd Vityarthi-Project/Project
 
-Navigate to the Directory:
-
-Bash
-
-cd game.black_jack
-
-Run the Game:
-
-Execute the main Python script to launch the command-line interface:
+Run the main file to start the game:
 
 Bash
 
 python main.py
 
-
 # Instructions for Testing
-To verify the system functions correctly, perform the following integration tests during runtime:
 
-Input Validation Test: When prompted to enter a bet amount, type alphabetical characters (e.g., "abc") instead of a number. The system should catch the error and prompt you again without crashing the program.
+If you want to test the edge cases to see how the code holds up, try doing these things while you play:
 
-Economy Test: Attempt to bet an amount greater than your current wallet balance or a negative number. The system should reject the bet.
+The Typo Test: When the game asks you how much you want to bet, type a word like "hello" instead of a number. The try-except block will catch it and ask for a real number.
 
-Ace Logic Test: Monitor hands containing an Ace. Ensure the system correctly evaluates the Ace as 11, but automatically drops its value to 1 if drawing another card pushes the total score over 21.
+The Economy Test: Try betting a negative amount or more money than you actually have in your wallet. The game will reject it.
 
-Persistence Test: Play a round, log out of the game, and restart the terminal completely. Log back in with the same username to verify your wallet balance was saved correctly.
+The Ace Shift Test: Watch what happens when you have an Ace in your hand. The game calculates it as 11, but the second your total goes over 21, it instantly recalculates it as a 1.
+
+The Memory Test: Play a few rounds to change your wallet balance, log out, and completely close the terminal window. Run the script again, log in with your same username, and verify your balance carried over.
